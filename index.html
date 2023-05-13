@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"> -->
+  
+</head>
+
+<body>
+  <div class="container" id="container">
+    <header>
+      <h2>Student's Detail:</h2>
+    </header>
+    <div>
+      <!-- <form class="forms" id="form"> -->
+      <div>
+        <p> ENTER YOUR NAME:</p>
+        <div>
+          <input type="text" id="name" name="name">
+        </div>
+      </div>
+      <div>
+        <p> ENTER YOUR ROLL NO:</p>
+        <div>
+          <input type="number" id="roll_No">
+        </div>
+      </div>
+      <div>
+        <p>COMPUTER:</p>
+        <div>
+          <input type="number" id="com" placeholder="Enter your computer marks">
+        </div>
+      </div>
+      <div>
+        <p>STATS:</p>
+        <div>
+          <input type="number" id="stats" placeholder="Enter your stats marks">
+        </div>
+      </div>
+      <div>
+        <p> PHYSICS:</p>
+        <div>
+          <input type="number" id="phy" placeholder="Enter your physics marks">
+        </div>
+      </div>
+      <div>
+        <p> MATH:</p>
+        <div>
+          <input type="number" id="math" placeholder="Enter your Math marks">
+        </div>
+      </div>
+      <div>
+        <p> ENGLISH:</p>
+        <div>
+          <input type="number" id="eng" placeholder="Enter your English marks">
+        </div>
+      </div>
+      <div>
+        <p> ISLAMIAT:</p>
+        <div>
+          <input type="number" id="isl" placeholder="Enter your islamiat marks">
+        </div>
+      </div>
+      <div>
+        <p> PST:</p>
+        <div>
+          <input type="number" id="pst" placeholder="Enter your pst marks">
+        </div>
+      </div>
+      <div class="butt">
+        <button onclick="marks()"><b class="submitt"> SUBMITT</b></button>
+      </div>
+      <!-- </form> -->
+    </div>
+  </div>
+  <div class="res" id="result">
+    <div>
+      <p>YOUR RESULT</p>
+    </div>
+    <div>
+      <p>NAME:</p>
+      <div>
+        <input type="text" id="name1">
+      </div>
+    </div>
+    <div>
+      <p>Roll No:</p>
+      <div>
+        <input type="text" id="roll_No1">
+      </div>
+    </div>
+    <div>
+      <div>
+        <p>Total Obtained Marks</p>
+
+        <input type="text" id="totalObtainedMarks">
+      </div>
+    </div>
+    <div>
+      <p>Your Percentage</p>
+      <div>
+        <input type="text" id="percentage">
+      </div>
+    </div>
+    <div>
+      <p>Grade</p>
+      <div>
+        <input type="text" id="grade">
+      </div>
+    </div>
+  </div>
+  <script>
+    let main = document.getElementById("main")
+    let result = document.getElementById('result')
+    
+    function marks() {
+      let name = document.getElementById("name").value;
+      let roll_No = +document.getElementById("roll_No").value;
+      let comMarks = +document.getElementById("com").value;
+      let statsMarks = +document.getElementById("stats").value;
+      let mathMarks = +document.getElementById("math").value;
+      let phyMarks = +document.getElementById("phy").value;
+      let engMarks = +document.getElementById("eng").value;
+      let pstMarks = +document.getElementById("pst").value;
+      let islMarks = +document.getElementById("isl").value;
+      let totalObtainedMarks = comMarks + statsMarks + mathMarks + phyMarks + engMarks + pstMarks + islMarks
+      let percentage=  Math.floor(totalObtainedMarks / 700 * 100) + "%"; 
+      let grade=""
+    if (percentage >= 90) {
+      grade = 'A+';
+    } else if (percentage >= 80) {
+      grade = 'A';
+    } else if (percentage >= 70) {
+      grade = 'B';
+    } else if (percentage >= 60) {
+      grade = 'C';
+    } else if (percentage >= 50) {
+      grade = 'D';
+    } else {
+      grade = 'F';
+    }
+      document.getElementById("totalObtainedMarks").value = totalObtainedMarks + "/700"
+      document.getElementById("name1").value = name
+      document.getElementById("roll_No1").value = roll_No
+      document.getElementById("percentage").value =percentage;
+      document.getElementById("grade").value =Grade;
+    } 
+  </script>
+</body>
+
+</html>
